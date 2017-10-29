@@ -79,3 +79,47 @@ a =12.5
 print round(a)
 
 #__________________________________________________________________________________________________________________________
+# video 6
+# les boucles en python 
+
+# boucle while :
+
+compteur = 0
+
+while (compteur < 10):
+	print ("tu as appuyé sur mon ventre et j'ai des gaz !")
+	compteur += 1
+
+#_______________________________________________________
+ # menu de jeu avec une coucle while :
+
+jeu_lance = True
+print("")
+
+while jeu_lance:
+	choixMenu = input ("> ")
+
+	if choixMenu == "again":
+		continue
+	elif choixMenu == "quit":
+		jeu_lance = False
+	elif choixMenu == "hello":
+		print("Bonjour :-)")
+	else:
+		print("commande introuvable")
+
+print("A bientot...")
+#_________________________________________________________
+
+ # boucles for : 
+
+sentence = "bonjour tout le monde :)"
+
+for letter in sentence:
+	print(letter)
+
+print("à bientot ...")
+
+#___________________________________________________________
+
+# video 7: les fonctions 
