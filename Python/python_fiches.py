@@ -123,3 +123,66 @@ print("à bientot ...")
 #___________________________________________________________
 
 # video 7: les fonctions 
+"""
+fonctions vues : print()
+				 input()
+				 type()
+				 float()
+				 str()
+				 bool()
+				 format() // methode de la classe str
+"""
+age = input("quel âge as-tu ?")
+age = int(age)
+
+print("tu as {} ans.".format(age))
+
+#___________________________________________________
+def dire_bonjour():
+	print("bonjour tout le monde :)")
+
+dire_bonjour()
+#____________________________________________________
+
+def dire(nom_personne="eric", message_personne="Salut"):
+	print("{} : {}".format(nom_personne, message_personne))
+
+dire("Thomas" , "Bonjour à toi")
+dire("Tom", "Salut")
+
+dire("lolo") 
+# va retourner "lolo salut" car dans la def de dire()
+# eric et salut sont les valeurs basiques donc si il manque un para 
+# il sera remplacé par les val de bases qui sont "eric" et "salut"
+
+
+#______________________________________________________
+# quand on definit une fonction avec des arguments 
+# on peut preciser quel argument on utilise
+
+dire ("Salut !", "Thomas") # est different de 
+dire (message_personne="Salut !", nom_personne="Thomas")
+# car en renseignant les champs avec le nom des argument 
+# la fonction à bien remis d'abord le nom puis le message
+#________________________________________________________
+
+
+def show_inventory(*list_items):
+	for item in list_items:
+		print(item)
+
+show_inventory("épée")
+show_inventory("épée", "arc", "potion de mana", "cape rouge")
+
+# l'étoile dans le def permet de rendre le nombre de para illimité
+
+#________________________________________________________________
+
+# création d'une fonction qui retourne une valeur 
+def calculer_somme(nombre_1, nombre_2):
+	return nombre_1 + nombre_2
+
+print(calculer_somme(5, 16)) 
+
+#________________________________________________________________
+
