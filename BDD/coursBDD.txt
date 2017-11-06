@@ -1,0 +1,168 @@
+Base de données : coursbdd
+
+Ceci est la structure de la base de données :
+
+-----------------------------------------------------------------------------------
+Empno est la clé primaire de emp.
+
+Le depno de la table Emp est une clé étrangère qui référence le deptno de Dept.
+Elle doit donc exister dans Dept.
+FK = clé étrangère.
+
+Emp.Deptno FK référence Dept.Deptno
+Emp.Mgr FK référence Emp.Empno
+
+Sur le brouillon, souligner en dure les clés primaires.
+Sur le brouillon, souligner en pointillé les clés étrangères.
+-----------------------------------------------------------------------------------
+Dans le cours "" --> clé primaire
+Processus de normalisation
+
+    1. La première forme normale
+        
+        Si les champs sont atomiques, ils ne doivent pas être une liste de "quelquechose" !
+        Stricte : pareil + clé primaire
+        
+    2. Exemples
+
+            Ex : noteLV1 qqui peut être anglais/espagnol donc impossible (ou dur) de faire la moyenne des notes d'anglais.
+                 Donc on fait : ID d'un élève et ID d'une discipline
+                 Select ID discipline from basededonnées where ID élève = 1418 
+                 Pour avoir tous les cours d'un élève
+                 Ce qui définit de façon unique le rapport entre l'élève et le cours
+
+    3. La deuxième forme normale
+
+        La relation est en première forme normale stricte et les attributs dépendent de toute
+        la clef.
+
+            Ex : Suivi pédagogique : ("IDélève, IDdiscipline", Note, Coeff, Tauxd'assiduité.....)
+                 Tout se réfère à la clé primaire qui est "IDélève + IDdiscipline", ça marche pour note, coeff
+                 et taux d'assiduité !
+
+            Contre exemples : R ( id Représentant, id Client, NbVisites, Jour visite, NumTelRepresentant... )
+                            Nul car le NumTelRepresentant devra être changé sur tout si il change de numéro.
+                            Et on ne peut pas ajouter de clients sans id Représentant
+
+                            R ( id commande, id produit, QteCdée, PrixUnitaire, Remise, PrixTotal, DateCde, QteStock )
+                            L'id produit est pas le même si plusieurs produits dans la même commande
+
+    4. La troisième forme normale
+
+        La relation est en deuxième forme normale et les dépendances fonctionnelles issues 
+        de la clef sont directes.
+        R (X, Y, Z) Si X détermine Y et que Y détermine Z, c'est mauvais car X ne détermine pas Z
+        directement...
+        Il faut que X détermine directement Y et Z.
+
+            Contre exemples : R(ID produit, Nom Produit, Code TVA, Taux TVA)
+                            Pas en troisième forme normale
+                            On ne peut pas ajouter un nouveau taux de TVA tant qu'il n'est pas appliqué sur au
+                            moins un produit.
+                            On rique de faire disparaître des taux de TVA si on supprime des produits.
+                            Si un taux change, il faut modifier plusieurs lignes.
+
+                            R( commune, département, code postal, nbhabitant)
+
+    5. La BCKNF 
+        "Boyce Code Kent" ?
+        Un champ ne peut pas déterminer un bout de la clef sauf si elle est clef
+        candidate.
+        La relation est en troisième forme normale et tout déterminant fonctionnel
+        est une clef possible.
+
+            Contre exemples : SuiviPedago(id eleve, id discipline, id prof, note, taux assiduité...)
+                            Hypothèse : Les profs n'enseignent qu'une seule discipline et ne sont jamais
+                                        remplacés.
+                            
+                            Ou encore Vin(nomcru, pays, région, gtitéproduite...)
+
+    6. Les quatrièmes et cinquièmes formes normales
+
+        Leurs définitions ne sont pas vraiment simples. On se console en lisant dans certains ouvrages
+        que ces niveaux de normalisation sont sans intérêt pratique.
+
+        C'est inexact
+
+        Retenons plutôt qu'une relation en BCKNF est fort probablement en 4NF et 5NF.
+        Ainsi, certains auteurs proposent de ne pas perdre de temps à le vérifier.
+        Une relation en BCKNF qui ne serait pas en 4NF ou 5NF traduit des contraintes
+        de gestion invraisemblables.
+
+3: Modélisation conceptuelle des données
+    
+    7. Le modèle entité association. Relation N,N
+
+        Voir photo rond/carré
+
+
+
+        Id nom tel
+        ______________
+        |            |                                                   
+        |Représentant|                                      
+        |     TF     |\                                                    
+        |____________| \       1N    
+                        \
+                         \
+                         ( Visite TA )  NbVisites Jour visites
+                         /                
+                        /
+                       /       1N
+                      /
+        ______________
+        |            |
+        |   Client   |
+        |     TF     |    
+        |____________|                                       
+        
+        Id nom tel
+
+
+
+        Client : Id, nom, tel
+        Représentant : Id, nom, tel
+        Visite : id Représentant, id client, nb visite, jour visite
+
+    8. Le modèle entité association, Relation 1,N
+
+
+       Id nom tel
+        ______________
+        |            |                                                   
+        |Représentant|                                      
+        |     TF     |\                                                    
+        |____________| \       1N    
+                        \
+                         \
+                         ( Visite TA )  NbVisites Jour visites
+                         /                
+                        /
+                       /       1,1
+                      /
+        ______________
+        |            |
+        |   Client   |
+        |     TF     |    
+        |____________|                                       
+        
+        Id nom tel
+
+
+
+        Client : Id, nom, tel, id Représentant, nb visite, jour visite
+        Représentant : Id, nom, tel
+
+        (Tout est pareil sauf que c'est sur deux tables seulement au lieu de trois sur
+        l'exemple précédent !)
+
+        
+
+
+
+
+
+
+
+
+

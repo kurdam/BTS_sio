@@ -1,0 +1,32 @@
+h1
+{
+    color: grey;
+    text-align: center;
+    font-family: sans-serif;
+}
+p
+{
+    color: darkgrey;
+}
+.saumon
+{
+    color: darksalmon;
+    padding: 10px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
+    line-height: 10px;
+}
+.indentation
+{
+    margin-left: 20px;
+}
+h2, h3
+{
+    color: darkgreen;
+    font-family: sans-serif;
+}
+.exception
+{
+    background-color: lightblue;
+    text-align: right;
+    margin: 10px 10px 10px 10px;
+}
