@@ -1,0 +1,25 @@
+Serveur DHCP fourni une adresse ip à qui le demande 
+Et chaque routeur a un serveur DHCP
+
+IPv4 XXX.XXX.XXX.XXX série de 4 octets de 0 à 255
+NETMASK  masque de réseau XXX.XXX.XXX.XXX    série de 4 octets du style 255.255.255.0
+
+192
+10
+172
+!= débuts adresses ip
+
+Le dernier octet d'une adresse IPv4 est "changeable" et s'incrémente à toute les connections.
+
+127.0.0.1 c'est adresse ip de notre propre ordi car tous les ordis on cette adresse ip locale
+Serveur ipcop --> serveur parefeu dans lequel y a 3 cartes réseau : DMZ, LAN et WAN (worldwide area network)
+
+Adresse physique = MAC Adress
+
+
+Kkvu6vug!
+
+User debian : test
+Passwd : test
+
+apd db  --> maj des commandes installées

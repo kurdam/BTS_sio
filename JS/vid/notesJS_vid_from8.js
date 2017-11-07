@@ -46,8 +46,10 @@ if (typeof(heure) == "number") {
 	else 
 		alert ("c'est le soir");
 };
-else
+else {
 	alert("Mauvais type de valeur !");
+}
+	
 
 //_________________________________
 

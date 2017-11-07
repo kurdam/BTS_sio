@@ -1,0 +1,66 @@
+.inutile {
+    margin-top: 125px;
+    margin-left: 100px;
+}
+
+
+.banner-index {
+    width: 1200px;
+    height: 252px;
+    margin-top: 125px;
+    margin-left: 100px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Panorama_puy_de_dome_sud.jpg/1200px-Panorama_puy_de_dome_sud.jpg')
+}
+
+.banner-index:hover {
+    color: white;
+    background : linear-gradient(180deg, grey, white);
+    
+}
+.white-title {
+    
+    text-align: left;
+}
+
+
+
+
+/*                             */
+
+
+
+
+#container {
+    display: flex;
+    flex-direction: row;     /* make main axis horizontal (default setting) */
+    justify-content: center; /* center items horizontally, in this case */
+    align-items: center;     /* center items vertically, in this case */
+    height: 300px;
+}
+
+.box {
+    width: 300px;
+    height: 200px;;
+    margin: 5px;
+    text-align: center;     /* will center text in <p>, which is not a flex item */
+}
+.maj {
+    text-transform: uppercase;
+    color: grey;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#bluebox {
+    background-image : url('https://i2.cdscdn.com/pdt2/0/6/1/4/300x300/818385061/rw/nike-baskets-tanjun-ps-chaussures-enfant-fille.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#redbox {
+    background-image : url('https://i2.cdscdn.com/pdt2/d/9/2/4/300x300/302ef30cd92/rw/kappa-baskets-volti-chaussures-enfant-garcon.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.txtcenter {
+    text-align: center;
+}

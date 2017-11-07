@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercice Javascript</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>TD Javascript : Les gladiateurs</h1>
+    <div class="content">
+        <!-- L'id "formulaire est caché grâce à 
+            document.getElementById("formulaire").style.display = 'none';" 
+            à la ligne 66 de script.js-->
+        <div id="formulaire">
+            <div class="fighter">
+                <h2>Fighter 1</h2>
+
+                <div>
+                    <label>Nom</label>
+                    <input type="text" value="Ragnar" id="name1" placeholder="Name" required>
+                </div>
+                <div>
+                    <label>Santé</label>
+                    <input type="text" value="100" id="health1" placeholder="Health" required>
+                </div>
+                <div>
+                    <label>Force</label>
+                    <input type="text" value="15" id="strength1" placeholder="Strength" required>
+                </div>
+                <div>
+                    <label>Chance coup critique</label>
+                    <input type="text" value="0" id="criticalChance1" placeholder="Critical Chance" required>
+                </div>
+                <div>
+                    <label>Esquive / 100</label>
+                    <input type="text" value="8" id="esquive1" placeholder="Esquive" required>
+                </div>
+            </div>
+
+            <div class="fighter">
+                <h2>Fighter 2</h2>
+                <div>
+                    <label>Nom</label>
+                    <input type="text" value="Vercingetorix" id="name2" placeholder="Name" required>
+                </div>
+                <div>
+                    <label>Santé</label>
+                    <input type="text" value="100" id="health2" placeholder="Health" required>
+                </div>
+                <div>
+                    <label>Force</label>
+                    <input type="text" value="11" id="strength2" placeholder="Strength" required>
+                </div>
+                <div>
+                    <label>Chance coup critique</label>
+
+                    <input type="text" value="0" id="criticalChance2" placeholder="Critical Chance" required>
+                </div>
+                <div>
+                    <label>Esquive / 100</label>
+
+                    <input type="text" value="6" id="esquive2" placeholder="Esquive" required>
+                </div>
+            </div>
+            
+            <div class="start-fight">
+                <!--        Le boutton lance la fonction validation() (ligne 7 de script.js)     -->
+                <button id="startfight" onclick="validation()">Commencer le combat</button>
+            </div>
+
+            <div id="error">
+
+            </div>
+        </div>
+        <!-- Du coup on affiche "fight" grâce à 
+            document.getElementById("fight").style.display = 'block';
+            à la ligne 67 de script.js -->
+        <div id="fight">
+            <h1>Combat</h1>
+            <table id="fight-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="th" id="fighter1" colspan="3">Player 1</th>
+                        <th class="th" id="fighter2" colspan="3">Player 2</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Encaisse</th>
+                        <th>Inflige</th>
+                        <th>Reste</th>
+                        <th>Encaisse</th>
+                        <th>Inflige</th>
+                        <th>Reste</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="winner">
+        </div>
+    </div>
+    <!--  On charge le fichier (script.js) à la fin du body pour que le html charge en premier   -->
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
