@@ -171,9 +171,85 @@ SELECT ENAME FROM 'emp' --> renvoie tout
 SELECT ENAME FROM 'emp' WHERE EMPNO = 7369; --> renvoie Smith
                         (condition)
 
+Dans une requête, DISTINCT permet de pas dupliquer (élimine les doublons) ex :
+
+SELECT JOB FROM emp
+ JOB
+-  CLERK
+-  CLERK
+-  CLERK
+
+SELECT DISTINCT JOB FROM emp
+ JOB
+-  CLERK
+
+SELECT ENAME FROM emp WHERE JOB != 'SALESMAN'
+SELECT ENAME FROM EMP WHERE JOB IN ("CLERK", "SALESMAN");
 
 
+LIKE veut dire "qui ressemble à"
+avec _caractère   et %chainedecaractère
 
+select ename from emp where ename like "%a%";
+retourne tous les noms avec un "a" dedans
+select ename from emp where ename like "a%";
+retourne tous les noms qui commencent avec un "a"
+
+NOT IN
+NOT LIKE
+IS NULL
+NOT NULL
+
+select ename from emp where comm is (not) null;
+
+select ename from emp where comm = null // Ca ne marchera jamais car null est un "boolean" et du coup on peut pas comparer
+qqchose à une absence
+
+select ename from emp where sal + comm > 1500;
+ce qui est moyen car si comm = null, sal + comm = null
+
+coalesce(nomdecolomne, int) donc coalesce(comm, int)
+select ename from emp where sal + coalesce(comm, 0) > 1500;
+
+function count(nomdecolomne) retourne le nombre d'éléments non null
+
+select ename from emp where ename like("_l%") --> donne tous les nom qui ont comme 2ème lettre un "l"
+
+Composés : AND, OR, NOT
+Exemple : SELECT ename from emp where JOB = "MANAGER" or (job = "MANAGER" and deptno = 10);
+
+Petit tips : sur la console, toujours mettre un ; à la fin de la requête
+
+select distinct job from emp order by job --> ordre alphabétique
+select distinct job from emp order by job desc --> ordre alphabétique décroissant ou des pains au chocolat
+
+exercice n°3 :
+    SELECT ename, job FROM `emp` WHERE job not in ("CLERK", "analyst") order by job, ename
+
+n°5 :
+    select ename, HIREDATE from emp where HIREDATE between '1982-01-01' and '1982-12-31' order by HIREDATE
+
+n°6 :
+    select ename,sal from emp where sal < 2000 order by sal DESC
+
+
+Alias : select ename as nom, job as fonction from emp
+Ce qui change le nom de la colomne mais ça marche que dans la première close, pas dans le where
+
+Les jointures :
+    -    SELECT emp.ename, emp.DEPTNO, dept.DEPTNO, dept.DNAME from emp, dept
+    
+    ça donne 76 lignes sans pression apparente parce que les 4 deptno sont raccordés à CHAQUE pélos de la liste
+    du coup : 
+    -    SELECT emp.ename, emp.DEPTNO, dept.DEPTNO, dept.DNAME from emp, dept where emp.DEPTNO = dept.DEPTNO
+
+    et même mieux, sans les deptno :
+    -    SELECT emp.ename, dept.DNAME from emp, dept where emp.DEPTNO = dept.DEPTNO
+
+Pour savoir qui est le chef de qui :
+    select emp.ENAME, emp2.ename from emp, emp as emp2 where emp.MGR = emp2.EMPNO 
+    je dirais même mieux :
+    select emp.ENAME as "Nom du collaborateur", emp2.ename as "Nom du responsable" from emp, emp as emp2 where emp.MGR = emp2.EMPNO 
 
 
 
