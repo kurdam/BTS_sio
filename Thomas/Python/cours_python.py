@@ -191,6 +191,10 @@ print(chaine.upper()) # mets tout le texte en maj.
 
 print(chaine.lower()) # mets tout le texte en min.
 
+print(chaine.strip()) # enleve les espaces
+
+print(chaine.endswith('d')) #teste si la chaine finit par un d
+
 print('AN APPLE A DAY'.lower()) # mets tout le texte en min.
 
 print ('12345'.isdigit()) #retourne true
@@ -199,9 +203,51 @@ print ('1234A'.isdigit()) #retourne false
 
 chaine_1 = "bonjour et au revoir"
 
+print(chaine.replace('hello', 'good morning')) #remplace hello par goodmorning
+
+chaine = chaine.replace('hello', 'good morning') # applique le changement dans la chaine
+
+#pour sortir la doc on fait la commande help
+
+print(chaine.cont('o')) #compte le nombre de o dans la chaine 
+
+print(chaine.find('o')) #retourne l'indice de la position du premier o 
+
+print(chaine.find('s')) #va retourner -1 car il n'y a pas de s dans la chaine 
+
 for i in range (0,len(chaine_1),2):
 	print(chaine_1[i])
 	print(chaine_1[i+1])
+
+#_________________________________________________________________________________________________
+#Les Fonctions
+
+def mapremierefonction():
+	print('hello world')
+
+nb = input("entrez un nombre")
+
+def sign(nb):
+	if (nb < 0):
+		return 1
+	else:
+		return 0
+
+if sign(nb) == 1:
+	print("le nombre est négatif")
+else:
+	print ("le nombre est positif")
+
+texte = 'bonjour'
+
+def Add_point(string):
+	if string[-1] == '.':
+		return string
+	else:
+		return string + '.'
+
+texte = Add_point(texte)
+print(texte)
 
 
 
