@@ -70,12 +70,12 @@
                 Veille technologique
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownCMSI">
-                <a class="dropdown-item" href="construction.php">Proxmox</a>
-                <a class="dropdown-item" href="construction.php">Free Open Ghost</a>
+                <a class="dropdown-item" href="proxmox.php">Proxmox</a>
+                <a class="dropdown-item" href="fog.php">Free Open Ghost</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="construction.php">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
             </li>
           </ul>

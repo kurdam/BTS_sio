@@ -51,7 +51,7 @@ require("banner.php");
 
       <!-- Marketing Icons Section -->
       <div class="row">
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <h4 class="card-header">Mon GitHub</h4>
             <div class="card-body">
@@ -62,7 +62,7 @@ require("banner.php");
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <h4 class="card-header">Mon CV</h4>
             <div class="card-body">
@@ -73,7 +73,7 @@ require("banner.php");
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <h4 class="card-header">Mon Pearltrees</h4>
             <div class="card-body">
@@ -84,10 +84,7 @@ require("banner.php");
             </div>
           </div>
         </div>
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <h4 class="card-header">Mon Compte linkedin</h4>
             <div class="card-body">
@@ -103,34 +100,34 @@ require("banner.php");
       <h2>Quelques Projets</h2>
 
       <div class="row">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="img/waze.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Projet Waze CCP</a>
+                <p>Projet Waze CCP</p>
               </h4>
               <p class="card-text">Mise en place des applications Waze Adaptées aux communes dans les batiments publics de la ville ce Cassis</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="img/googlebusiness.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Projet d'amélioration du SEO avec Google business</a>
+                <p>Projet d'amélioration du SEO avec Google business</p>
               </h4>
               <p class="card-text">Référencement des bâtiments publics de la ville de cassis</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-ite">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="img/sp.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Sharepoint</a>
+                <p>Project Sharepoint</p>
               </h4>
               <p class="card-text">Préparation du portail Microsoft Sharepont pour le développement dans tous les services de la ville de Cassis</p>
             </div>

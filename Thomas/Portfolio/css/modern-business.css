@@ -54,7 +54,6 @@ width: 20%;
 /*
   liens dans la liste compétences
 */
-
 a.compobl:link{
     color:#FF4D4C;
 }
@@ -68,15 +67,11 @@ a.compobl:active{
     color:#CC0000;
 }
 
-a.compfac:link{
-    color:#4CFF7C;
+iframe.stage {
+    border: 1px solid black;
+    width: 100%;
+    height: 1920px;
 }
-a.compfac:hover{
-    color:#00FF44;
-}
-a.compfac:visited{
-    color:#427F52;
-}
-a.compfac:active{
-    color:#00CC36;
+.proxmox{
+  background-color: black;
 }
